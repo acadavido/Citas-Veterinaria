@@ -1,37 +1,48 @@
 
-const Pacientes = () => {
+const Pacientes = ({paciente}) => {
+
+// DESTRUCTURING
+  const {nombre, propietario, email, fecha, sintomas}=paciente
+
   return (
     <div className='bg-white shadow-md m-3 px-5 py-10 rounded-xl'>
 
         <p className=" uppercase font-bold m-3">
           Nombre:{" "}
-          <span className="font-normal normal-case">Hook</span>
+          <span className="font-normal normal-case">{nombre}</span>
         </p>
 
         <p className=" uppercase font-bold m-3">
           Propietario:{" "}
-          <span className="font-normal normal-case">Andrea</span>
+          <span className="font-normal normal-case">{propietario}</span>
         </p>
 
         <p className=" uppercase font-bold m-3">
           Email:{" "}
-          <span className="font-normal normal-case">andrea@gmail.com</span>
+          <span className="font-normal normal-case">{email}</span>
         </p>
 
         <p className=" uppercase font-bold m-3">
           Fecha Alta:{" "}
-          <span className="font-normal normal-case">3 de julio de 2022</span>
+          <span className="font-normal normal-case">{fecha}</span>
         </p>
 
         <p className=" uppercase font-bold m-3">
           Sintomas:{" "}
-          <span className="font-normal normal-case">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-          laborum</span>
+          <span className="font-normal normal-case">{sintomas}</span>
         </p>
 
+        <div className="flex justify-between mt-10">
+          <button
+            type="button"
+            className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg"
+          >Editar</button>
+
+          <button
+            type="button"
+            className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg"
+          >Eliminar</button>
+        </div>
     
     </div>
   )
