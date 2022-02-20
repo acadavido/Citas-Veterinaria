@@ -1,14 +1,14 @@
-import Pacientes from "./Pacientes"
+
+import Paciente from "./Paciente"
 
 
 
-const ListadoPacientes = ({pacientes}) => {
-
+const ListadoPacientes = ({pacientes, setPaciente, eliminarPaciente}) => {
 
 
 
   return (
-    <div className="md:w-1/2 lg:3/5 mt-2 md:h-screen overflow-y-scroll">
+    <div className="md:w-1/2 mt-2 md:h-screen overflow-y-scroll">
       
       {pacientes && pacientes.length ? (
   
@@ -21,9 +21,11 @@ const ListadoPacientes = ({pacientes}) => {
           
           {pacientes.map( (paciente) => (
             
-            <Pacientes 
+            <Paciente
               key={paciente.id}
               paciente={paciente}
+              setPaciente={setPaciente}
+              eliminarPaciente={eliminarPaciente}
             />
           ))}
             
